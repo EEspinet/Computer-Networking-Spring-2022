@@ -135,7 +135,7 @@ def get_route(hostname):
                 #Fill in end
                 try: #try to fetch the hostname
                     #Fill in start
-                    currentHostname = addr[0]
+                    currentHostname = gethostbyaddr(addr[0])
                     print(addr[0])
                     # tracelist1.append(currentHostname)
                     #Fill in end
