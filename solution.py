@@ -75,10 +75,11 @@ def get_route(hostname):
     tracelist1 = [] #This is your list to use when iterating through each trace 
     tracelist2 = [] #This is your list to contain all traces
 
+    destAddr = gethostbyname(hostname)
     for ttl in range(1,MAX_HOPS):
         tracelist1 = []
         for tries in range(TRIES):
-            destAddr = gethostbyname(hostname)
+            
             # print("destAddr")
             # print(destAddr)
 
