@@ -150,8 +150,9 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here
                     tracelist1.append(str(ttl))
-                    tracelist1.append("*")
-                    tracelist1.append("Request timed out")
+                    tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
+                    tracelist1.append(str(gethostbyname(currentHostname)))
+                    tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
                     #Fill in end
                 elif currentRequestType == 3:
