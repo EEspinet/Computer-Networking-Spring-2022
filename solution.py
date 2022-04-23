@@ -76,6 +76,7 @@ def get_route(hostname):
     tracelist2 = [] #This is your list to contain all traces
 
     for ttl in range(1,MAX_HOPS):
+        tracelist1 = []
         for tries in range(TRIES):
             destAddr = gethostbyname(hostname)
             # print("destAddr")
@@ -186,7 +187,6 @@ def get_route(hostname):
                     #Fill in end
                 break
             finally:
-                tracelist1 = []
                 mySocket.close()
 
 if __name__ == '__main__':
