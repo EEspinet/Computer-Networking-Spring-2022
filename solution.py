@@ -176,7 +176,7 @@ def get_route(hostname):
                     tracelist1.append(str(gethostbyname(currentHostname)))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
-                    if destAddr == gethostbyname(currentHostname):
+                    if str(destAddr) == str(gethostbyname(currentHostname)):
                         return tracelist2
                     #Fill in end
                 else:
