@@ -136,6 +136,7 @@ def get_route(hostname):
                 try: #try to fetch the hostname
                     #Fill in start
                     currentHostname = addr[0]
+                    print(addr[0])
                     # tracelist1.append(currentHostname)
                     #Fill in end
                 except herror:   #if the host does not provide a hostname
@@ -151,7 +152,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here
                     tracelist1.append(str(ttl))
                     tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
-                    tracelist1.append(str(gethostbyname(addr[0])))
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
                     #Fill in end
@@ -162,7 +163,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here 
                     tracelist1.append(str(ttl))
                     tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
-                    tracelist1.append(str(gethostbyname(addr[0])))
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
                     #Fill in end
@@ -173,10 +174,10 @@ def get_route(hostname):
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     tracelist1.append(str(ttl))
                     tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
-                    tracelist1.append(str(gethostbyname(addr[0])))
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
-                    if str(destAddr) == str(gethostbyname(currentHostname)):
+                    if str(destAddr) == str(addr[0]):
                         return tracelist2
                     #Fill in end
                 else:
