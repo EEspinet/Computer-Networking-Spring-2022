@@ -151,7 +151,6 @@ def get_route(hostname):
                     tracelist1.append("*")
                     tracelist1.append("Request timed out")
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
                     #Fill in end
                 elif currentRequestType == 3:
                     bytes = struct.calcsize("d")
@@ -163,7 +162,6 @@ def get_route(hostname):
                     tracelist1.append(str(destAddr))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
                     #Fill in end
                 elif currentRequestType == 0:
                     bytes = struct.calcsize("d")
@@ -175,7 +173,6 @@ def get_route(hostname):
                     tracelist1.append(str(destAddr))
                     tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
                     if destAddr == gethostbyname(currentHostname):
                         return tracelist2
                     #Fill in end
@@ -185,11 +182,11 @@ def get_route(hostname):
                     tracelist1.append("*")
                     tracelist1.append("Request timed out")
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
                     #If there is an exception/error to your if statements, you should append that to your list here
                     #Fill in end
                 break
             finally:
+                tracelist1 = []
                 mySocket.close()
 
 if __name__ == '__main__':
