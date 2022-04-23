@@ -161,7 +161,7 @@ def get_route(hostname):
                     tracelist1.append(str(ttl))
                     tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
                     tracelist1.append(str(destAddr))
-                    tracelist1.append(currentHostname)
+                    tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
                     tracelist1.clear()
                     #Fill in end
@@ -173,7 +173,7 @@ def get_route(hostname):
                     tracelist1.append(str(ttl))
                     tracelist1.append(str(int((timeReceived - timeSent)*1000)) + "ms")
                     tracelist1.append(str(destAddr))
-                    tracelist1.append(currentHostname)
+                    tracelist1.append(str(currentHostname))
                     tracelist2.append(tracelist1)
                     tracelist1.clear()
                     if destAddr == gethostbyname(currentHostname):
@@ -181,7 +181,7 @@ def get_route(hostname):
                     #Fill in end
                 else:
                     #Fill in start
-                    tracelist1.append(ttl)
+                    tracelist1.append(str(ttl))
                     tracelist1.append("*")
                     tracelist1.append("Request timed out")
                     tracelist2.append(tracelist1)
